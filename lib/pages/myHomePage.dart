@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:genie/pages/Page1.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -15,7 +17,7 @@ class _MyHomePageState extends State<MyHomePage> {
     final screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 246, 246, 246), // Light gray background color
+      backgroundColor: const Color.fromARGB(255, 255, 221, 163), // Light gray background color
       body: Stack(
         children: [
           Column(
@@ -139,9 +141,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   backgroundColor: const Color.fromARGB(238, 7, 101, 78), // Button background color
                 ),
                 onPressed: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Button Pressed!')),
-                  );
+                 Get.to(() => const Page1());
                 },
                 child: Text(
                   'Get Started',
