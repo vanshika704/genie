@@ -65,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
             alignment: Alignment.bottomCenter,
             child: Container(
               width: double.infinity,
-              height: screenHeight * 0.29, // Responsive height
+              height: screenHeight * 0.32, // Responsive height
               decoration: BoxDecoration(
                 color: const Color.fromARGB(255, 214, 144, 3),
                 borderRadius: BorderRadius.only(
@@ -87,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
             alignment: Alignment.bottomCenter,
             child: Container(
               width: double.infinity,
-              height: screenHeight * 0.27,
+              height: screenHeight * 0.28,
               decoration: BoxDecoration(
                 color: const Color.fromARGB(255, 5, 111, 97),
                 borderRadius: BorderRadius.only(
@@ -109,7 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
             alignment: Alignment.bottomCenter,
             child: Container(
               width: double.infinity,
-              height: screenHeight * 0.21,
+              height: screenHeight * 0.23,
               decoration: BoxDecoration(
                 color: const Color.fromARGB(255, 214, 144, 3),
                 borderRadius: BorderRadius.only(
