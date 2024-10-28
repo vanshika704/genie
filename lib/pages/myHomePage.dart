@@ -17,7 +17,7 @@ class _MyHomePageState extends State<MyHomePage> {
     final screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 255, 221, 163), // Light gray background color
+      backgroundColor: const Color.fromARGB(255, 255, 221, 163), 
       body: Stack(
         children: [
           Column(
