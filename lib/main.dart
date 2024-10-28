@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'pages/myHomePage.dart';
 
@@ -11,10 +12,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
    debugShowCheckedModeBanner: false,
-      home: const MyHomePage(),
+   
+      getPages: [
+          GetPage(name: "/", page: () => MyHomePage()),
+      ],
     );
   }
 }
