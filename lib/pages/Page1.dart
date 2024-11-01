@@ -29,6 +29,7 @@ class _Page1State extends State<Page1> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Image.asset("assets/4757693-removebg-preview.png",height: 200,),
             const SizedBox(height: 40),
 
             // First Role Option
@@ -37,7 +38,7 @@ class _Page1State extends State<Page1> {
                 // Handle Deaf or Hard of Hearing role selection
               },
               child: Container(
-                height: 120,
+                height: 100,
                 decoration: BoxDecoration(
                   color: const Color.fromARGB(255, 105, 105, 105), // Gray color from previous design
                   borderRadius: BorderRadius.circular(20),
@@ -75,7 +76,7 @@ class _Page1State extends State<Page1> {
                 ),
               ),
             ),
-            const SizedBox(height: 40),
+            const SizedBox(height: 20),
 
             const Text(
               'or',
@@ -84,7 +85,7 @@ class _Page1State extends State<Page1> {
                 color: Colors.white70,
               ),
             ),
-            const SizedBox(height: 40),
+            const SizedBox(height: 20),
 
             // Second Role Option
             GestureDetector(
@@ -92,7 +93,7 @@ class _Page1State extends State<Page1> {
                 // Handle Sign Language Interpreter role selection
               },
               child: Container(
-                height: 120,
+                height: 100,
                 decoration: BoxDecoration(
                   color: const Color.fromARGB(255, 92, 90, 90), // Darker gray for the second container
                   borderRadius: BorderRadius.circular(20),
@@ -132,27 +133,7 @@ class _Page1State extends State<Page1> {
             const SizedBox(height: 90),
 
             // Get Started Button
-            ElevatedButton(
-              onPressed: () {
-                // Handle Get Started action
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromARGB(255, 192, 192, 192), // Dark button color
-                padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
           
-              child: const Text(
-                'Get started',
-                style: TextStyle(
-                  color: Color.fromARGB(255, 7, 7, 7),
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
           ],
         ),
       ),
