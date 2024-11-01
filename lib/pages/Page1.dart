@@ -11,7 +11,7 @@ class _Page1State extends State<Page1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 255, 221, 163),
+      backgroundColor: const Color.fromARGB(255, 29, 28, 28),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -22,11 +22,11 @@ class _Page1State extends State<Page1> {
             margin: const EdgeInsets.all(10),
             padding: const EdgeInsets.symmetric(horizontal: 20),
             decoration: BoxDecoration(
-              color: Color.fromARGB(255, 5, 111, 97),
+              color: Color.fromARGB(255, 105, 105, 105),
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.3),
+                  color: const Color.fromARGB(255, 0, 0, 0).withOpacity(0.3),
                   spreadRadius: 5,
                   blurRadius: 10,
                   offset: const Offset(0, 5),
@@ -47,7 +47,7 @@ class _Page1State extends State<Page1> {
                 const Text(
                   'Want Delivery',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Color.fromARGB(255, 255, 255, 255),
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                   ),
@@ -64,11 +64,11 @@ class _Page1State extends State<Page1> {
             margin: const EdgeInsets.all(10),
             padding: const EdgeInsets.symmetric(horizontal: 20),
             decoration: BoxDecoration(
-              color: Color.fromARGB(255, 5, 111, 97),
+              color: Color.fromARGB(255, 92, 90, 90),
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.3),
+                  color: const Color.fromARGB(255, 8, 8, 8).withOpacity(0.3),
                   spreadRadius: 5,
                   blurRadius: 10,
                   offset: const Offset(0, 5),

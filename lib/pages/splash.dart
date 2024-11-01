@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:genie/pages/Page1.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -12,9 +13,9 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     // Set a timer for 5 seconds to navigate to the next screen
-    Timer(Duration(seconds: 5), () {
+    Timer(Duration(seconds: 10), () {
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => HomeScreen()),
+        MaterialPageRoute(builder: (_) => Page1()),
       );
     });
   }
@@ -44,12 +45,3 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class HomeScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Home Screen")),
-      body: Center(child: Text("Welcome to the Home Screen!")),
-    );
-  }
-}
