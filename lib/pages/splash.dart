@@ -1,7 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:genie/pages/Page1.dart';
+import 'package:genie/pages/LoginPage.dart';
+
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -15,7 +16,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // Set a timer for 5 seconds to navigate to the next screen
     Timer(Duration(seconds: 2), () {
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => Page1()),
+        MaterialPageRoute(builder: (_) => LoginPage()),
       );
     });
   }

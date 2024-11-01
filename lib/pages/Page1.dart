@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart'; // Import Google Fonts
 
 class Page1 extends StatefulWidget {
   const Page1({Key? key}) : super(key: key);
@@ -13,13 +14,13 @@ class _Page1State extends State<Page1> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 29, 28, 28),
-        title: const Text(
-          'Choose your role: ',
+        title: Text(
+          'Choose your role:',
           textAlign: TextAlign.center,
-          style: TextStyle(
+          style: GoogleFonts.oxanium( // Apply Oxanium font to the title
             fontSize: 28,
             fontWeight: FontWeight.bold,
-            color: Colors.white, // White text for dark background
+            color: Colors.white,
           ),
         ),
       ),
@@ -29,7 +30,10 @@ class _Page1State extends State<Page1> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset("assets/4757693-removebg-preview.png",height: 200,),
+            Image.asset(
+              "assets/4757693-removebg-preview.png",
+              height: 200,
+            ),
             const SizedBox(height: 40),
 
             // First Role Option
@@ -54,10 +58,10 @@ class _Page1State extends State<Page1> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const SizedBox(width: 20), // Space before the text
-                    const Text(
+                    Text(
                       'Can Deliver',
                       textAlign: TextAlign.center,
-                      style: TextStyle(
+                      style: GoogleFonts.oxanium( // Apply Oxanium font to text
                         color: Colors.white,
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -78,9 +82,9 @@ class _Page1State extends State<Page1> {
             ),
             const SizedBox(height: 20),
 
-            const Text(
+            Text(
               'or',
-              style: TextStyle(
+              style: GoogleFonts.oxanium( // Apply Oxanium font to text
                 fontSize: 25,
                 color: Colors.white70,
               ),
@@ -117,10 +121,10 @@ class _Page1State extends State<Page1> {
                       ),
                     ),
                     const SizedBox(width: 20), // Space between image and text
-                    const Text(
+                    Text(
                       'Want Delivery',
                       textAlign: TextAlign.center,
-                      style: TextStyle(
+                      style: GoogleFonts.oxanium( // Apply Oxanium font to text
                         color: Colors.white,
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -133,7 +137,7 @@ class _Page1State extends State<Page1> {
             const SizedBox(height: 90),
 
             // Get Started Button
-          
+            // Add your button code here
           ],
         ),
       ),
