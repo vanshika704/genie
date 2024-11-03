@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart'; // Import Google Fonts
-
+import 'package:get/get.dart';
 class Page1 extends StatefulWidget {
   const Page1({Key? key}) : super(key: key);
 
@@ -40,7 +40,7 @@ class _Page1State extends State<Page1> {
               // First Role Option
               GestureDetector(
                 onTap: () {
-                  // Handle Deaf or Hard of Hearing role selection
+                 
                 },
                 child: Container(
                   height: 100,
@@ -60,7 +60,7 @@ class _Page1State extends State<Page1> {
                     children: [
                       const SizedBox(width: 20), // Space before the text
                       Text(
-                        'Can Deliver',
+                        'Want Work',
                         textAlign: TextAlign.center,
                         style: GoogleFonts.oxanium( // Apply Oxanium font to text
                           color: Colors.white,
@@ -95,16 +95,16 @@ class _Page1State extends State<Page1> {
               // Second Role Option
               GestureDetector(
                 onTap: () {
-                  // Handle Sign Language Interpreter role selection
+                  Get.toNamed('/explore');
                 },
                 child: Container(
                   height: 100,
                   decoration: BoxDecoration(
                     color: const Color.fromARGB(255, 92, 90, 90), // Darker gray for the second container
                     borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
-                        color: const Color.fromARGB(255, 0, 0, 0), // Shadow color
+                        color: Color.fromARGB(255, 0, 0, 0), // Shadow color
                         blurRadius: 8.0, // Spread radius
                         offset: Offset(0, 4), // Shadow offset
                       ),
@@ -123,7 +123,7 @@ class _Page1State extends State<Page1> {
                       ),
                       const SizedBox(width: 20), // Space between image and text
                       Text(
-                        'Want Delivery',
+                        'Can work',
                         textAlign: TextAlign.center,
                         style: GoogleFonts.oxanium( // Apply Oxanium font to text
                           color: Colors.white,
