@@ -25,23 +25,24 @@ class _ExplorePageState extends State<ExplorePage> {
       'description': 'Event Management',
       'page': const ItemPage(title: 'Item 3 Page', content: 'Details about Item 3')
     },
-     {
+    {
       'image': 'assets/4294649-removebg-preview.png',
       'description': 'Moving Services',
-      'page': const ItemPage(title: 'Item 4 Page', content: 'Details about Item 2')
+      'page': const ItemPage(title: 'Item 4 Page', content: 'Details about Item 4')
     },
   ];
 
   @override
   Widget build(BuildContext context) {
-    int crossAxisCount = MediaQuery.of(context).size.width > 600 ? 4 : 2;
+    int crossAxisCount = MediaQuery.of(context).size.width > 800 ? 4 : MediaQuery.of(context).size.width > 600 ? 3 : 2;
+    double fontSize = MediaQuery.of(context).size.width > 600 ? 20 : 16;
 
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 29, 28, 28),
         title: Text(
           'Explore',
-          style: GoogleFonts.oxanium(color: Colors.white),
+          style: GoogleFonts.oxanium(color: Colors.white, fontSize: fontSize + 4),
         ),
       ),
       body: Container(
@@ -78,29 +79,35 @@ class _ExplorePageState extends State<ExplorePage> {
                     ),
                   ],
                 ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.asset(
-                        item['image'],
-                        height: 200,
-                        width: 200,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      item['description'],
-                      style: GoogleFonts.oxanium(
-                        fontSize: 25,
-                       
-                        color: Colors.white,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
+                child: LayoutBuilder(
+                  builder: (context, constraints) {
+                    double imageHeight = constraints.maxHeight * 0.6;
+                    double textFontSize = fontSize * 0.8;
+
+                    return Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.asset(
+                            item['image'],
+                            height: imageHeight,
+                            width: constraints.maxWidth * 0.9,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          item['description'],
+                          style: GoogleFonts.oxanium(
+                            fontSize: textFontSize,
+                            color: Colors.white,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    );
+                  },
                 ),
               ),
             );
@@ -119,14 +126,16 @@ class ItemPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double fontSize = MediaQuery.of(context).size.width > 600 ? 24 : 18;
+
     return Scaffold(
       appBar: AppBar(
-        title: Text(title, style: GoogleFonts.oxanium()),
+        title: Text(title, style: GoogleFonts.oxanium(fontSize: fontSize)),
       ),
       body: Center(
         child: Text(
           content,
-          style: GoogleFonts.oxanium(fontSize: 24),
+          style: GoogleFonts.oxanium(fontSize: fontSize),
           textAlign: TextAlign.center,
         ),
       ),
