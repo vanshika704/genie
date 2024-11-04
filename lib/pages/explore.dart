@@ -42,7 +42,7 @@ class _ExplorePageState extends State<ExplorePage> {
         backgroundColor: const Color.fromARGB(255, 29, 28, 28),
         title: Text(
           'Explore',
-          style: GoogleFonts.oxanium(color: Colors.white, fontSize: fontSize + 4),
+          style: GoogleFonts.oxanium(color: Colors.white, fontSize: fontSize + 12, fontWeight: FontWeight.bold),
         ),
       ),
       body: Container(
