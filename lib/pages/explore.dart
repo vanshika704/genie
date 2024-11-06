@@ -38,7 +38,7 @@ class _ExplorePageState extends State<ExplorePage> {
     },
     {
       'image': 'assets/34747-removebg-preview.png',
-      'description': 'Teaching Services',
+      'description': 'Beauty',
       'page': const ItemPage(title: 'Item 5 Page', content: 'Details about Item 4')
     },
   ];
