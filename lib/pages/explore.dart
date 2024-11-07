@@ -41,6 +41,11 @@ class _ExplorePageState extends State<ExplorePage> {
       'description': 'Beauty',
       'page': const ItemPage(title: 'Item 5 Page', content: 'Details about Item 4')
     },
+     {
+      'image': 'assets/202102_036-removebg-preview.png',
+      'description': 'Home Manintainance',
+      'page': const ItemPage(title: 'Item 5 Page', content: 'Details about Item 4')
+    },
   ];
 
   @override
