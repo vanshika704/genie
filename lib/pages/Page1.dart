@@ -40,7 +40,9 @@ class _Page1State extends State<Page1> {
               // First Role Option
               GestureDetector(
                 onTap: () {
-                 
+                  
+                  Get.toNamed('/explore');
+              
                 },
                 child: Container(
                   height: 100,
