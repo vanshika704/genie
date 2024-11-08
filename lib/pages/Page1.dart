@@ -42,7 +42,7 @@ class _Page1State extends State<Page1> {
               GestureDetector(
                 onTap: () {
                   
-                  Get.toNamed('/explore');
+                  Get.toNamed('/register');
               
                 },
                 child: Container(
@@ -63,7 +63,7 @@ class _Page1State extends State<Page1> {
                     children: [
                       const SizedBox(width: 20), // Space before the text
                       Text(
-                        'Want Work',
+                        'Can Work',
                         textAlign: TextAlign.center,
                         style: GoogleFonts.oxanium( // Apply Oxanium font to text
                           color: Colors.white,
@@ -126,7 +126,7 @@ class _Page1State extends State<Page1> {
                       ),
                       const SizedBox(width: 20), // Space between image and text
                       Text(
-                        'Can work',
+                        'Want Help',
                         textAlign: TextAlign.center,
                         style: GoogleFonts.oxanium( // Apply Oxanium font to text
                           color: Colors.white,
