@@ -35,8 +35,8 @@ class _MyHomePageState extends State<MyHomePage> {
    
           Center(
             child: Image.asset(
-              'assets/Screenshot_2024-11-01_192246-removebg-preview.png', // Replace with your logo path
-              width: 250, // Adjust logo size as needed
+              'assets/Screenshot_2024-11-01_192246-removebg-preview.png', 
+              width: 250, 
               height: 250,
             ),
           ),
