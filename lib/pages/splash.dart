@@ -13,7 +13,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    // Set a timer for 5 seconds to navigate to the next screen
+   
     Timer(const Duration(seconds: 2), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (_) => LoginPage()),
@@ -27,12 +27,12 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
-          // Background image covering the full screen
+        
           Image.asset(
-            'assets/bg1.png', // Replace with your image path
+            'assets/bg1.png', 
             fit: BoxFit.cover,
           ),
-          // Centered logo on top of the image
+   
           Center(
             child: Image.asset(
               'assets/Screenshot_2024-11-01_192246-removebg-preview.png', // Replace with your logo path
