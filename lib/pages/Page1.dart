@@ -31,11 +31,12 @@ class _Page1State extends State<Page1> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+                  const SizedBox(height: 50),
               Image.asset(
                 "assets/4757693-removebg-preview.png",
                 height: 200,
               ),
-              const SizedBox(height: 40),
+              const SizedBox(height: 100),
         
               // First Role Option
               GestureDetector(
