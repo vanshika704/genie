@@ -103,7 +103,7 @@ class _Page1State extends State<Page1> {
                 child: Container(
                   height: 100,
                   decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 92, 90, 90), // Darker gray for the second container
+                    color: const Color.fromARGB(255, 92, 90, 90), 
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: const [
                       BoxShadow(
