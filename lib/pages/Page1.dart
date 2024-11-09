@@ -139,9 +139,7 @@ class _Page1State extends State<Page1> {
                 ),
               ),
               const SizedBox(height: 90),
-        
-              // Get Started Button
-              // Add your button code here
+      
             ],
           ),
         ),
