@@ -88,7 +88,7 @@ class _Page1State extends State<Page1> {
         
               Text(
                 'or',
-                style: GoogleFonts.oxanium( // Apply Oxanium font to text
+                style: GoogleFonts.oxanium( 
                   fontSize: 25,
                   color: Colors.white70,
                 ),
