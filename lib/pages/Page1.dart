@@ -95,7 +95,7 @@ class _Page1State extends State<Page1> {
               ),
               const SizedBox(height: 20),
         
-              // Second Role Option
+            
               GestureDetector(
                 onTap: () {
                   Get.toNamed('/explore');
