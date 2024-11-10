@@ -109,7 +109,7 @@ class _Page1State extends State<Page1> {
                       BoxShadow(
                         color: Color.fromARGB(255, 0, 0, 0), // Shadow color
                         blurRadius: 8.0, // Spread radius
-                        offset: Offset(0, 4), // Shadow offset
+                        offset: Offset(0, 4), 
                       ),
                     ],
                   ),
