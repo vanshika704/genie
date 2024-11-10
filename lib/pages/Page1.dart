@@ -118,7 +118,7 @@ class _Page1State extends State<Page1> {
                     children: [
                       ClipOval(
                         child: Image.asset(
-                          'assets/Delivery.jpg', // Replace with your image path
+                          'assets/Delivery.jpg',
                           width: 100,
                           height: 100,
                           fit: BoxFit.cover,
