@@ -124,11 +124,11 @@ class _Page1State extends State<Page1> {
                           fit: BoxFit.cover,
                         ),
                       ),
-                      const SizedBox(width: 20), // Space between image and text
+                      const SizedBox(width: 20), 
                       Text(
                         'Want Help',
                         textAlign: TextAlign.center,
-                        style: GoogleFonts.oxanium( // Apply Oxanium font to text
+                        style: GoogleFonts.oxanium( 
                           color: Colors.white,
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
