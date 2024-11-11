@@ -107,7 +107,7 @@ class _Page1State extends State<Page1> {
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: const [
                       BoxShadow(
-                        color: Color.fromARGB(255, 0, 0, 0), // Shadow color
+                        color: Color.fromARGB(255, 0, 0, 0), 
                         blurRadius: 8.0, // Spread radius
                         offset: Offset(0, 4), 
                       ),
