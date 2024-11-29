@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'page1.dart'; // Replace with actual page1 file
-import 'Signup_page.dart'; // Import the signup page
+import 'package:genie/pages/LoginPage.dart';
+import 'package:genie/pages/page1.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class SignupPage extends StatefulWidget {
+  const SignupPage({super.key});
 
   @override
-  _LoginPageState createState() => _LoginPageState();
+  State<SignupPage> createState() => _SignupPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
-  final TextEditingController _emailController = TextEditingController();
+class _SignupPageState extends State<SignupPage> {
+   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 29, 28, 28),
         title: Text(
-          'Login',
+          'Create an Account',
           style: GoogleFonts.oxanium(
             fontSize: 28,
             fontWeight: FontWeight.bold,
@@ -37,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               const SizedBox(height: 10),
               Image.asset(
-                "assets/6333040-removebg-preview.png",
+                "assets/6343845-removebg-preview.png",
                 height: 200,
                 width: 200,
               ),
@@ -128,11 +128,11 @@ class _LoginPageState extends State<LoginPage> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const SignupPage()),
+                    MaterialPageRoute(builder: (context) => const LoginPage()),
                   );
                 },
                 child: Text(
-                  "Don't have an account? Signup",
+                  "Already have an account ? Login",
                   style: GoogleFonts.oxanium(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
