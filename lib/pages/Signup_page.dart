@@ -38,10 +38,10 @@ class _SignupPageState extends State<SignupPage> {
               const SizedBox(height: 10),
               Image.asset(
                 "assets/6343845-removebg-preview.png",
-                height: 200,
+                height: 250,
                 width: 200,
               ),
-              const SizedBox(height: 100),
+              const SizedBox(height: 50),
               TextField(
                 controller: _emailController,
                 style: GoogleFonts.oxanium(color: Colors.white),
@@ -123,7 +123,7 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                 ),
               ),
-              const SizedBox(height: 80),
+              const SizedBox(height: 20),
               InkWell(
                 onTap: () {
                   Navigator.push(
@@ -135,8 +135,8 @@ class _SignupPageState extends State<SignupPage> {
                   "Already have an account ? Login",
                   style: GoogleFonts.oxanium(
                     fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                   
+                    color:  const Color.fromARGB(255, 51, 241, 255),
                   ),
                 ),
               ),

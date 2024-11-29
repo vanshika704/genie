@@ -123,7 +123,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
-              const SizedBox(height: 80),
+              const SizedBox(height: 20),
               InkWell(
                 onTap: () {
                   Navigator.push(
@@ -135,8 +135,8 @@ class _LoginPageState extends State<LoginPage> {
                   "Don't have an account? Signup",
                   style: GoogleFonts.oxanium(
                     fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    
+                    color: const Color.fromARGB(255, 51, 241, 255),
                   ),
                 ),
               ),
