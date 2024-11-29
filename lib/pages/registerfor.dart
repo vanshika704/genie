@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:genie/pages/registerform.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Registerfor extends StatefulWidget {
@@ -79,14 +80,14 @@ class _RegisterforState extends State<Registerfor> {
           itemBuilder: (context, index) {
             final item = items[index];
             return GestureDetector(
-              onTap: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) => item['page'],
-                //   ),
-                // );
-              },
+             onTap: () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ServiceRegistrationForm(selectedService: item['description']),
+        ),
+      );
+    },
               child: Container(
                 decoration: BoxDecoration(
                   color: const Color.fromARGB(255, 92, 90, 90),
