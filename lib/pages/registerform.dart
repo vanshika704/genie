@@ -13,15 +13,15 @@ class ServiceRegistrationForm extends StatefulWidget {
 class _ServiceRegistrationFormState extends State<ServiceRegistrationForm> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _contactController = TextEditingController();
-  TimeOfDay _startTime = TimeOfDay(hour: 0, minute: 0); // Set initial time to 00:00
-TimeOfDay _endTime = TimeOfDay(hour: 0, minute: 0); // Set initial time to 00:00
+  TimeOfDay _startTime = TimeOfDay(hour: 0, minute: 0); 
+  TimeOfDay _endTime = TimeOfDay(hour: 0, minute: 0); 
 
-  double _experience = 0; // Slider for years of experience
-  List<bool> _availability = [false, false, false]; // Toggle buttons for availability (morning, afternoon, evening)
-  List<String> _skills = []; // List of added skills
+  double _experience = 0; 
+  List<bool> _availability = [false, false, false]; 
+  List<String> _skills = [];
   final TextEditingController _skillController = TextEditingController();
 
-  List<bool> _selectedDays = List.filled(7, false); // For selecting days of the week
+  List<String> _selectedDays = [];  // Store selected days as a list of strings
   
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ TimeOfDay _endTime = TimeOfDay(hour: 0, minute: 0); // Set initial time to 00:00
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        color: const Color.fromARGB(255, 29, 28, 28),
+        color: Colors.black,  // Ensure background is black
         padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(
           child: Column(
@@ -58,7 +58,7 @@ TimeOfDay _endTime = TimeOfDay(hour: 0, minute: 0); // Set initial time to 00:00
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 15),
 
               // Name Field
               _buildTextField(
@@ -99,14 +99,13 @@ TimeOfDay _endTime = TimeOfDay(hour: 0, minute: 0); // Set initial time to 00:00
               const SizedBox(height: 20),
 
               // Availability Toggle Buttons (Morning, Afternoon, Evening)
-              _buildToggleButtons(fontSize),
-              const SizedBox(height: 20),
+             
 
-              // Availability Days (Checkbox for each day)
+              // Availability Days (Multi-select Days)
               _buildAvailabilityDays(fontSize),
               const SizedBox(height: 20),
 
-              // Availability Hours (Time Picker)
+              // Availability Hours (Dropdown for start and end times)
               _buildAvailabilityHours(fontSize),
               const SizedBox(height: 20),
 
@@ -169,34 +168,7 @@ TimeOfDay _endTime = TimeOfDay(hour: 0, minute: 0); // Set initial time to 00:00
     );
   }
 
-  Widget _buildToggleButtons(double fontSize) {
-    return ToggleButtons(
-      isSelected: _availability,
-      onPressed: (index) {
-        setState(() {
-          _availability[index] = !_availability[index];
-        });
-      },
-      borderRadius: BorderRadius.circular(10),
-      selectedColor: Colors.white,
-      fillColor: Colors.green,
-      color: Colors.white70,
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12),
-          child: Text('Morning', style: GoogleFonts.oxanium(fontSize: fontSize)),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12),
-          child: Text('Afternoon', style: GoogleFonts.oxanium(fontSize: fontSize)),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12),
-          child: Text('Evening', style: GoogleFonts.oxanium(fontSize: fontSize)),
-        ),
-      ],
-    );
-  }
+ 
 
   Widget _buildAvailabilityDays(double fontSize) {
     final daysOfWeek = [
@@ -211,78 +183,84 @@ TimeOfDay _endTime = TimeOfDay(hour: 0, minute: 0); // Set initial time to 00:00
           style: GoogleFonts.oxanium(color: Colors.white),
         ),
         const SizedBox(height: 10),
-        for (int i = 0; i < daysOfWeek.length; i++)
-          CheckboxListTile(
-            title: Text(
-              daysOfWeek[i],
-              style: GoogleFonts.oxanium(color: Colors.white),
-            ),
-            value: _selectedDays[i],
-            onChanged: (bool? value) {
-              setState(() {
-                _selectedDays[i] = value ?? false;
-              });
-            },
-            activeColor: Colors.green,
-            checkColor: Colors.white,
-          ),
+        // Multi-select approach for days
+        Wrap(
+          spacing: 8,
+          children: daysOfWeek.map((day) {
+            return ChoiceChip(
+              label: Text(day, style: GoogleFonts.oxanium(color: Colors.white)),
+              selected: _selectedDays.contains(day),
+              onSelected: (selected) {
+                setState(() {
+                  if (selected) {
+                    _selectedDays.add(day);
+                  } else {
+                    _selectedDays.remove(day);
+                  }
+                });
+              },
+              selectedColor: const Color.fromARGB(255, 80, 226, 221),
+              backgroundColor: Colors.grey,
+            );
+          }).toList(),
+        ),
       ],
     );
   }
 
  Widget _buildAvailabilityHours(double fontSize) {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Text(
-        'Select Available Hours:',
-        style: GoogleFonts.oxanium(color: Colors.white),
-      ),
-      const SizedBox(height: 10),
-      Row(
-        children: [
-          Text(
-            'From: ${_startTime.format(context)}',
-            style: GoogleFonts.oxanium(color: const Color.fromARGB(255, 51, 241, 255)),
-          ),
-          IconButton(
-            icon: const Icon(Icons.access_time, color: Color.fromARGB(204, 255, 255, 255)),
-            onPressed: () async {
-              TimeOfDay? selectedTime = await showTimePicker(
-                context: context,
-                initialTime: _startTime,
-              );
-              if (selectedTime != null) {
-                setState(() {
-                  _startTime = selectedTime;
-                });
-              }
-            },
-          ),
-          const SizedBox(width: 20),
-          Text(
-            'To: ${_endTime.format(context)}',
-            style: GoogleFonts.oxanium(color: const Color.fromARGB(255, 51, 241, 255)),
-          ),
-          IconButton(
-            icon: const Icon(Icons.access_time, color: Color.fromARGB(255, 255, 255, 255)),
-            onPressed: () async {
-              TimeOfDay? selectedTime = await showTimePicker(
-                context: context,
-                initialTime: _endTime,
-              );
-              if (selectedTime != null) {
-                setState(() {
-                  _endTime = selectedTime;
-                });
-              }
-            },
-          ),
-        ],
-      ),
-    ],
-  );
-}
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Select Available Hours:',
+          style: GoogleFonts.oxanium(color: Colors.white),
+        ),
+        const SizedBox(height: 10),
+        Row(
+          children: [
+            Text(
+              'From: ${_startTime.format(context)}',
+              style: GoogleFonts.oxanium(color:  const Color.fromARGB(255, 51, 241, 255),),
+            ),
+            IconButton(
+              icon: const Icon(Icons.access_time, color: Color.fromARGB(204, 255, 255, 255),),
+              onPressed: () async {
+                TimeOfDay? selectedTime = await showTimePicker(
+                  context: context,
+                  initialTime: _startTime,
+                );
+                if (selectedTime != null) {
+                  setState(() {
+                    _startTime = selectedTime;
+                  });
+                }
+              },
+            ),
+            const SizedBox(width: 20),
+            Text(
+              'To: ${_endTime.format(context)}',
+              style: GoogleFonts.oxanium(color:  const Color.fromARGB(255, 51, 241, 255),),
+            ),
+            IconButton(
+              icon: const Icon(Icons.access_time, color:  Color.fromARGB(255, 255, 255, 255),),
+              onPressed: () async {
+                TimeOfDay? selectedTime = await showTimePicker(
+                  context: context,
+                  initialTime: _endTime,
+                );
+                if (selectedTime != null) {
+                  setState(() {
+                    _endTime = selectedTime;
+                  });
+                }
+              },
+            ),
+          ],
+        ),
+      ],
+    );
+  }
 
   Widget _buildSkillsSection() {
     return Column(
@@ -338,8 +316,8 @@ TimeOfDay _endTime = TimeOfDay(hour: 0, minute: 0); // Set initial time to 00:00
     if (_nameController.text.isEmpty ||
         _contactController.text.isEmpty ||
         _skills.isEmpty ||
-        !_availability.contains(true) ||
-        !_selectedDays.contains(true)) {
+        _selectedDays.isEmpty ||
+        !_availability.contains(true)) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text('Please fill all fields'),
@@ -357,6 +335,3 @@ TimeOfDay _endTime = TimeOfDay(hour: 0, minute: 0); // Set initial time to 00:00
     );
   }
 }
-
-
-
